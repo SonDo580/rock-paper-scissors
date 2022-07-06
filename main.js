@@ -6,9 +6,9 @@ let rounds = 1;
 //     let computerSelection = computerPlay();
 //     let playerSelection = getInput();
 
-//     if (computerSelection > playerSelection) {
+//     if (computerSelection > playerSelection || (computerSelection === 1 && playerSelection === 3)) {
 //         computerScores++;
-//     } else if (computerSelection < playerSelection) {
+//     } else if (computerSelection < playerSelection || (playerSelection === 1 && computerSelection === 3)) {
 //         playerScores++;
 //     }
 
@@ -20,7 +20,7 @@ function computerPlay() {
     const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max + 1 - min) + min);
     }
-     
+
     return getRandomInt(1, 3);
 }
 
@@ -44,6 +44,6 @@ function getInput() {
 }
 
 // This function print the result of each round.
-function printRoundResult(playerSelection, computerSelection) {
+function printRoundResult(choice1, choice2) {
 
 }
