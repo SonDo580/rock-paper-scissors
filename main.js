@@ -6,6 +6,12 @@ while(rounds <= 5) {
     let computerSelection = computerPlay();
     let playerSelection = getInput();
 
+    if (computerSelection > playerSelection) {
+        computerScores++;
+    } else if (computerSelection < playerSelection) {
+        playerScores++;
+    }
+
     rounds++;
 }
 
