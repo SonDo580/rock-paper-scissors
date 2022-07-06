@@ -9,7 +9,7 @@ while (true) {
         let computerSelection = computerPlay();
         let playerSelection = getInput(rounds);
         if (playerSelection === null) {
-            alert("You canceled the game!");
+            canceled = true;
             break;
         } else {
             printRoundResult(playerSelection, computerSelection);
@@ -34,6 +34,11 @@ while (true) {
         // end round
 
         rounds++;
+    }
+
+    if(canceled) {
+        alert("You canceled the game!");
+        break;
     }
 
     showFinalResult(playerScores, computerScores);
