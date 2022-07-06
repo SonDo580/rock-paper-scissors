@@ -2,14 +2,11 @@ let playerScores = 0;
 let computerScores = 0;
 let rounds = 1;
 
-// while(rounds <= 5) {
-//     let computerSelection = computerPlay();
-//     let playerSelection = getInput();
+
+let computerSelection = computerPlay();
+let playerSelection = getInput();
 
 
-
-//     rounds++;
-// }
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
 function computerPlay() {
