@@ -36,6 +36,7 @@ while (true) {
         rounds++;
     }
 
+    // This is when the player cancels in the middle of the game
     if(canceled) {
         alert("You canceled the game!");
         break;
@@ -81,7 +82,6 @@ function getInput(rounds) {
         } else {
             alert("You should press 1, 2, or 3");
         }
-
     }
 }
 
