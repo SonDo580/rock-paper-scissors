@@ -6,11 +6,7 @@ let rounds = 1;
 //     let computerSelection = computerPlay();
 //     let playerSelection = getInput();
 
-//     if (computerSelection > playerSelection || (computerSelection === 1 && playerSelection === 3)) {
-//         computerScores++;
-//     } else if (computerSelection < playerSelection || (playerSelection === 1 && computerSelection === 3)) {
-//         playerScores++;
-//     }
+
 
 //     rounds++;
 // }
@@ -43,7 +39,21 @@ function getInput() {
     }
 }
 
-// This function print the result of each round.
-function printRoundResult(choice1, choice2) {
+// This function decide the result of each round.
+function decideRoundResult(playerSelection, computerSelection) {
+    if (
+        computerSelection > playerSelection 
+        || computerSelection === 1 && playerSelection === 3
+    ) {
+        return -1;   // the player lost
 
+    } else if (
+        computerSelection < playerSelection 
+        || playerSelection === 1 && computerSelection === 3
+    ) {
+        return 1;   // the player won
+
+    } else {
+        return 0;   // a tie
+    }
 }
