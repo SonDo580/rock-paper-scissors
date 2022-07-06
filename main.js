@@ -59,15 +59,8 @@ function decideRoundResult(playerSelection, computerSelection) {
 function printRoundResult(playerSelection, computerSelection) {
     let result = decideRoundResult(playerSelection, computerSelection);
 
-    playerSelection = 
-        playerSelection === 1 ? "rock"
-            : playerSelection === 2 ? "paper"
-                : "scissors";
-
-    computerSelection =
-        computerSelection === 1 ? "rock"
-            : computerSelection === 2 ? "paper"
-                : "scissors";
+    playerSelection = convertSelection(playerSelection);
+    computerSelection = convertSelection(computerSelection);
 
     switch (result) {
         case -1:
