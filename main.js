@@ -6,6 +6,7 @@ let rounds = 1;
 let computerSelection = computerPlay();
 let playerSelection = getInput();
 updateScore(playerSelection, computerSelection);
+printRoundResult(playerSelection, computerSelection);
 
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
