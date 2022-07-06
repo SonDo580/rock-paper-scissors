@@ -2,15 +2,20 @@ let playerScores = 0;
 let computerScores = 0;
 let rounds = 1;
 
-// 1 round
-let computerSelection = computerPlay();
-let playerSelection = getInput();
-if (playerSelection === null) {
-    alert("You canceled the game!");
-} else {
-    updateScore(playerSelection, computerSelection);
-    printRoundResult(playerSelection, computerSelection);
+while (rounds <= 5) {
+    // start round
+    let computerSelection = computerPlay();
+    let playerSelection = getInput();
+    if (playerSelection === null) {
+        alert("You canceled the game!");
+    } else {
+        updateScore(playerSelection, computerSelection);
+        printRoundResult(playerSelection, computerSelection);
+    }
+    // end round
 }
+
+
 
 
 
@@ -30,7 +35,7 @@ function getInput() {
         // At first I used the "+" operator (+prompt(...)) to convert the input to number.
         // But if the user click "Cancel", "choice" will be null. Then it'll be converted to 0.
         // So "choice === null" (in the else if) will never be true.
-        let choice = prompt(        
+        let choice = prompt(
             `Choose an option:
             1. Rock
             2. Paper
@@ -38,7 +43,7 @@ function getInput() {
         );
 
         // use "==" when comparing to allow type conversion
-        if (choice == 1 || choice == 2 || choice == 3) {    
+        if (choice == 1 || choice == 2 || choice == 3) {
             return +choice;     // convert the choice to number
         } else if (choice === null) {
             return choice;
