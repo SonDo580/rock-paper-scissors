@@ -5,8 +5,13 @@ let rounds = 1;
 // 1 round
 let computerSelection = computerPlay();
 let playerSelection = getInput();
-updateScore(playerSelection, computerSelection);
-printRoundResult(playerSelection, computerSelection);
+if (playerSelection === null) {
+    alert("You canceled the game!");
+} else {
+    updateScore(playerSelection, computerSelection);
+    printRoundResult(playerSelection, computerSelection);
+}
+
 
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
