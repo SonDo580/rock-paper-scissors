@@ -8,6 +8,7 @@ while (rounds <= 5) {
     let playerSelection = getInput();
     if (playerSelection === null) {
         alert("You canceled the game!");
+        break;
     } else {
         updateScore(playerSelection, computerSelection);
         printRoundResult(playerSelection, computerSelection);
