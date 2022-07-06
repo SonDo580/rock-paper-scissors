@@ -1,19 +1,5 @@
-# The rules
-You are going to play against the computer.
-There are 3 options to choose from: rock, paper, scissors.
-Rock beats Scissors. Scissors beat Paper. Paper beats Rock. The result is tied if the players choose the same shape.
+# The rules  
+You are going to play against the computer.  
+There are 3 options to choose from: Rock, Paper, Scissors.  
+Rock beats Scissors. Scissors beat Paper. Paper beats Rock. The result is tied if the players choose the same shape.  
 There are 5 rounds in a game. Whoever wins more rounds is the winner. If both players win the same number of rounds, the game is tied.
-
-# Steps
-1. Create 2 variables to store the player's scores and the computer's scores, a variable to count the number of rounds.
-2. A function called "computerPlay" will randomly return either "Rock", "Paper", or "Scissors".
-3. Use "prompt()" to get input from the player.
-4. Compare the user's input with the computer's selection (I use number instead of string).
-5. Based on the rules, decide the result of the current round. Print that result to the screen.
-6. Update the player's scores and the computer's scores.
-7. If one's scores equals 3, move to Step 9.
-8. If not. Move to the next round. Repeat Steps 2-7.
-9. After 5 rounds, compare the player's scores and the computer's scores. Who has higher scores win. The game is tied if both have the same scores. 
-10. Print the final result to the screen. Ask if the player want to play again.
-11. If yes, repeat Steps 1-10.
-12. If not, stop the game.
