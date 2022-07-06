@@ -6,11 +6,6 @@ let rounds = 1;
 // let computerSelection = computerPlay();
 // let playerSelection = getInput();
 
-// switch(decideRoundResult(playerSelection, computerSelection)) {
-//     case 1:
-//     case -1:
-//     case 0:
-// }
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
 function computerPlay() {
@@ -84,4 +79,20 @@ function convertSelection(selection) {
             : selection === 2 ? "paper"
                 : "scissors"
     );
+}
+
+// This function update the score in the entire game
+function updateScore(playerSelection, computerSelection) {
+    switch (decideRoundResult(playerSelection, computerSelection)) {
+        case 1:     // player won
+            playerScores++;
+            break;
+        case -1:    // player lost
+            computerScores++;
+            break;
+        case 0:     // tied
+            break;
+        default:
+            alert("Something is wrong!");
+    }
 }
