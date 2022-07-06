@@ -6,3 +6,8 @@ let rounds = 1;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max + 1 - min) + min);    
 }
+
+// This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
+function computerPlay() {
+    return getRandomInt(1, 3);
+}
