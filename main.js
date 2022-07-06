@@ -13,6 +13,8 @@ while (rounds <= 5) {
         printRoundResult(playerSelection, computerSelection);
     }
     // end round
+
+    rounds++;
 }
 
 
