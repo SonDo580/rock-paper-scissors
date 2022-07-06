@@ -59,7 +59,7 @@ function decideRoundResult(playerSelection, computerSelection) {
 function printRoundResult(playerSelection, computerSelection) {
     let result = decideRoundResult(playerSelection, computerSelection);
 
-    playerSelection =
+    playerSelection = 
         playerSelection === 1 ? "rock"
             : playerSelection === 2 ? "paper"
                 : "scissors";
@@ -82,4 +82,13 @@ function printRoundResult(playerSelection, computerSelection) {
         default:
             alert("Something is wrong!");
     }
+}
+
+// This function converts the selection value (1, 2, 3) to the corresponding string
+function convertSelection(selection) {
+    return (
+        selection === 1 ? "rock"
+            : selection === 2 ? "paper"
+                : "scissors"
+    );
 }
