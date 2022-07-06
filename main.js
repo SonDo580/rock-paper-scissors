@@ -2,6 +2,7 @@ while (true) {
     let playerScores = 0;
     let computerScores = 0;
     let rounds = 1;
+    let canceled = false;
 
     while (rounds <= 5) {
         // start round
