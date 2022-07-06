@@ -18,6 +18,10 @@ while (rounds <= 5) {
     rounds++;
 }
 
+console.log(playerScores);
+console.log(computerScores);
+
+
 
 
 
@@ -117,4 +121,21 @@ function updateScore(playerSelection, computerSelection) {
         default:
             alert("Something is wrong!");
     }
+}
+
+// This function show the final result of the game
+function showFinalResult(playerScores, computerScores) {
+    let result;
+
+    if (playerScores < computerScores) {
+        result = "You lost!"
+    } else if (playerScores > computerScores) {
+        result = "You win!"
+    } else {
+        result = "Tied game!"
+    }
+
+    alert(`You win ${playerScores} ${playerScores === 1 ? 'round' : 'rounds'}. 
+Computer wins ${computerScores} ${computerScores === 1 ? 'round' : 'rounds'}.
+=> ${result}`)
 }
