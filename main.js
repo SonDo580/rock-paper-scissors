@@ -13,7 +13,10 @@ while (true) {
         } else {
             printRoundResult(playerSelection, computerSelection);
 
-            // update the score
+            // Update the score
+            // At first I used a function to do this, but it can't modify playerScores and computerScores
+            // In some language, there's something called "pass by reference", besides "pass by value".
+            // But in JavaScript, only Objects are passed by reference
             switch (decideRoundResult(playerSelection, computerSelection)) {
                 case 1:     // player won
                     playerScores++;
