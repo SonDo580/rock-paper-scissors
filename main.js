@@ -4,6 +4,7 @@ let rounds = 1;
 
 while(rounds <= 5) {
     let computerSelection = computerPlay();
+    let playerSelection = getInput();
 
     rounds++;
 }
