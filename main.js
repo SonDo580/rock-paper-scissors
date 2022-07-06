@@ -5,7 +5,7 @@ let rounds = 1;
 while (rounds <= 5) {
     // start round
     let computerSelection = computerPlay();
-    let playerSelection = getInput();
+    let playerSelection = getInput(rounds);
     if (playerSelection === null) {
         alert("You canceled the game!");
         break;
@@ -32,14 +32,14 @@ function computerPlay() {
 }
 
 // Ask the player to choose an option
-function getInput() {
+function getInput(rounds) {
     // Keep asking until the player entered a valid option
     while (true) {
         // At first I used the "+" operator (+prompt(...)) to convert the input to number.
         // But if the user click "Cancel", "choice" will be null. Then it'll be converted to 0.
         // So "choice === null" (in the else if) will never be true.
         let choice = prompt(
-            `Choose an option:
+            `ROUND ${rounds} - Choose an option:
             1. Rock
             2. Paper
             3. Scissors`
