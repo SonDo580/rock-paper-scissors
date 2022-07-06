@@ -3,10 +3,14 @@ let computerScores = 0;
 let rounds = 1;
 
 
-let computerSelection = computerPlay();
-let playerSelection = getInput();
+// let computerSelection = computerPlay();
+// let playerSelection = getInput();
 
-
+// switch(decideRoundResult(playerSelection, computerSelection)) {
+//     case 1:
+//     case -1:
+//     case 0:
+// }
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
 function computerPlay() {
@@ -36,7 +40,7 @@ function getInput() {
     }
 }
 
-// This function decide the result of each round.
+// This function decide the result of each round
 function decideRoundResult(playerSelection, computerSelection) {
     if (computerSelection === 1 && playerSelection === 3) {             // player: scissors, computer: rock
         return -1;   // the player lost
@@ -48,5 +52,34 @@ function decideRoundResult(playerSelection, computerSelection) {
         return 1;   // the player won
     } else {
         return 0;   // a tie
+    }
+}
+
+// This function prints the result of each round
+function printRoundResult(playerSelection, computerSelection) {
+    let result = decideRoundResult(playerSelection, computerSelection);
+
+    playerSelection =
+        playerSelection === 1 ? "rock"
+            : playerSelection === 2 ? "paper"
+                : "scissors";
+
+    computerSelection =
+        computerSelection === 1 ? "rock"
+            : computerSelection === 2 ? "paper"
+                : "scissors";
+
+    switch (result) {
+        case -1:
+            alert(`You lost! ${computerSelection} beats ${playerSelection}`);
+            break;
+        case 1:
+            alert(`You won! ${playerSelection} beats ${computerSelection}`);
+            break;
+        case 0:
+            alert("Tied match!");
+            break;
+        default:
+            alert("Something is wrong!");
     }
 }
