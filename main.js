@@ -1,8 +1,8 @@
-while(true) {
+while (true) {
     let playerScores = 0;
     let computerScores = 0;
     let rounds = 1;
-    
+
     while (rounds <= 5) {
         // start round
         let computerSelection = computerPlay();
@@ -15,11 +15,16 @@ while(true) {
             printRoundResult(playerSelection, computerSelection);
         }
         // end round
-    
+
         rounds++;
     }
-    
+
     showFinalResult(playerScores, computerScores);
+
+    if (!confirm("Do you want to play again?")) {
+        alert("You canceled the game!");
+        break;
+    }
 }
 
 
