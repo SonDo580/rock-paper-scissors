@@ -4,7 +4,7 @@ let rounds = 1;
 
 
 // let computerSelection = computerPlay();
-// let playerSelection = getInput();
+let playerSelection = getInput();
 
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
@@ -20,18 +20,22 @@ function computerPlay() {
 function getInput() {
     // Keep asking until the player entered a valid option
     while (true) {
-        let choice = +prompt(
+        let choice = prompt(
             `Choose an option:
             1. Rock
             2. Paper
             3. Scissors`
         );
 
-        if (choice === 1 || choice === 2 || choice === 3) {
+        // use "==" to convert the input to number when comparing
+        if (choice == 1 || choice == 2 || choice == 3) {    
             return choice;
+        } else if (choice === null) {
+            return;
+        } else {
+            alert("You should press 1, 2, or 3");
         }
 
-        alert("You should press 1, 2, or 3")
     }
 }
 
