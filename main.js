@@ -11,8 +11,21 @@ while (true) {
             alert("You canceled the game!");
             break;
         } else {
-            updateScore(playerSelection, computerSelection);
             printRoundResult(playerSelection, computerSelection);
+
+            // update the score
+            switch (decideRoundResult(playerSelection, computerSelection)) {
+                case 1:     // player won
+                    playerScores++;
+                    break;
+                case -1:    // player lost
+                    computerScores++;
+                    break;
+                case 0:     // tied
+                    break;
+                default:
+                    alert("Something is wrong!");
+            }
         }
         // end round
 
@@ -107,22 +120,6 @@ function convertSelection(selection) {
             : selection === 2 ? "paper"
                 : "scissors"
     );
-}
-
-// This function update the score in the entire game
-function updateScore(playerSelection, computerSelection) {
-    switch (decideRoundResult(playerSelection, computerSelection)) {
-        case 1:     // player won
-            playerScores++;
-            break;
-        case -1:    // player lost
-            computerScores++;
-            break;
-        case 0:     // tied
-            break;
-        default:
-            alert("Something is wrong!");
-    }
 }
 
 // This function show the final result of the game
