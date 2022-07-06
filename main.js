@@ -2,31 +2,30 @@ let playerScores = 0;
 let computerScores = 0;
 let rounds = 1;
 
-while(rounds <= 5) {
-    let computerSelection = computerPlay();
-    let playerSelection = getInput();
+// while(rounds <= 5) {
+//     let computerSelection = computerPlay();
+//     let playerSelection = getInput();
 
-    if (computerSelection > playerSelection) {
-        computerScores++;
-    } else if (computerSelection < playerSelection) {
-        playerScores++;
-    }
+//     if (computerSelection > playerSelection) {
+//         computerScores++;
+//     } else if (computerSelection < playerSelection) {
+//         playerScores++;
+//     }
 
-    rounds++;
-}
-
-// This function returns a random integer between "min" and "max" (inclusive)
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max + 1 - min) + min);
-}
+//     rounds++;
+// }
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
 function computerPlay() {
+    const getRandomInt = (min, max) => {
+        return Math.floor(Math.random() * (max + 1 - min) + min);
+    }
+     
     return getRandomInt(1, 3);
 }
 
 // Ask the player to choose an option
-function getInput() { 
+function getInput() {
     // Keep asking until the player entered a valid option
     while (true) {
         let choice = +prompt(
@@ -44,3 +43,7 @@ function getInput() {
     }
 }
 
+// This function print the result of each round.
+function printRoundResult(playerSelection, computerSelection) {
+
+}
