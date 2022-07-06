@@ -1,27 +1,26 @@
-let playerScores = 0;
-let computerScores = 0;
-let rounds = 1;
-
-while (rounds <= 5) {
-    // start round
-    let computerSelection = computerPlay();
-    let playerSelection = getInput(rounds);
-    if (playerSelection === null) {
-        alert("You canceled the game!");
-        break;
-    } else {
-        updateScore(playerSelection, computerSelection);
-        printRoundResult(playerSelection, computerSelection);
+while(true) {
+    let playerScores = 0;
+    let computerScores = 0;
+    let rounds = 1;
+    
+    while (rounds <= 5) {
+        // start round
+        let computerSelection = computerPlay();
+        let playerSelection = getInput(rounds);
+        if (playerSelection === null) {
+            alert("You canceled the game!");
+            break;
+        } else {
+            updateScore(playerSelection, computerSelection);
+            printRoundResult(playerSelection, computerSelection);
+        }
+        // end round
+    
+        rounds++;
     }
-    // end round
-
-    rounds++;
+    
+    showFinalResult(playerScores, computerScores);
 }
-
-showFinalResult(playerScores, computerScores);
-
-
-
 
 
 // This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
