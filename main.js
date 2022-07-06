@@ -20,7 +20,10 @@ function computerPlay() {
 function getInput() {
     // Keep asking until the player entered a valid option
     while (true) {
-        let choice = prompt(
+        // At first I used the "+" operator (+prompt(...)) to convert the input to number.
+        // But if the user click "Cancel", "choice" will be null. Then it'll be converted to 0.
+        // So "choice === null" (in the else if) will never be true.
+        let choice = prompt(        
             `Choose an option:
             1. Rock
             2. Paper
