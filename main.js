@@ -32,11 +32,11 @@ function getInput() {
             3. Scissors`
         );
 
-        // use "==" to convert the input to number when comparing
+        // use "==" when comparing to allow type conversion
         if (choice == 1 || choice == 2 || choice == 3) {    
-            return choice;
+            return +choice;     // convert the choice to number
         } else if (choice === null) {
-            return;
+            return choice;
         } else {
             alert("You should press 1, 2, or 3");
         }
