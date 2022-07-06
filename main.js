@@ -3,7 +3,7 @@ let computerScores = 0;
 let rounds = 1;
 
 while(rounds <= 5) {
-    // 
+    let computerSelection = computerPlay();
 
     rounds++;
 }
