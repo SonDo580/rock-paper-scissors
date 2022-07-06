@@ -18,9 +18,7 @@ while (rounds <= 5) {
     rounds++;
 }
 
-console.log(playerScores);
-console.log(computerScores);
-
+showFinalResult(playerScores, computerScores);
 
 
 
