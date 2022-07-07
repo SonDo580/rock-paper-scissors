@@ -7,57 +7,57 @@ const ROCK = 'Rock';
 const PAPER = 'Paper';
 const SCISSORS = 'Scissors';
 
-while (true) {
-    let playerScores = 0;
-    let computerScores = 0;
-    let rounds = 1;
-    let canceled = false;
+// while (true) {
+//     let playerScores = 0;
+//     let computerScores = 0;
+//     let rounds = 1;
+//     let canceled = false;
 
-    while (rounds <= 5) {
-        // start round
-        let computerSelection = computerPlay();
-        let playerSelection = getInput(rounds);
-        if (playerSelection === null) {
-            canceled = true;
-            break;
-        } else {
-            printRoundResult(playerSelection, computerSelection);
+//     while (rounds <= 5) {
+//         // start round
+//         let computerSelection = computerPlay();
+//         let playerSelection = getInput(rounds);
+//         if (playerSelection === null) {
+//             canceled = true;
+//             break;
+//         } else {
+//             printRoundResult(playerSelection, computerSelection);
 
-            // Update the score
-            // At first I used a function to do this, but it can't modify playerScores and computerScores
-            // In some language, there's something called "pass by reference", besides "pass by value".
-            // But in JavaScript, only Objects are passed by reference
-            switch (decideRoundResult(playerSelection, computerSelection)) {
-                case 1:     // player won
-                    playerScores++;
-                    break;
-                case -1:    // player lost
-                    computerScores++;
-                    break;
-                case 0:     // tied
-                    break;
-                default:
-                    alert("Something is wrong!");
-            }
-        }
-        // end round
+//             // Update the score
+//             // At first I used a function to do this, but it can't modify playerScores and computerScores
+//             // In some language, there's something called "pass by reference", besides "pass by value".
+//             // But in JavaScript, only Objects are passed by reference
+//             switch (decideRoundResult(playerSelection, computerSelection)) {
+//                 case 1:     // player won
+//                     playerScores++;
+//                     break;
+//                 case -1:    // player lost
+//                     computerScores++;
+//                     break;
+//                 case 0:     // tied
+//                     break;
+//                 default:
+//                     alert("Something is wrong!");
+//             }
+//         }
+//         // end round
 
-        rounds++;
-    }
+//         rounds++;
+//     }
 
-    // This is when the player cancels in the middle of the game
-    if (canceled) {
-        alert("You canceled the game!");
-        break;
-    }
+//     // This is when the player cancels in the middle of the game
+//     if (canceled) {
+//         alert("You canceled the game!");
+//         break;
+//     }
 
-    showFinalResult(playerScores, computerScores);
+//     showFinalResult(playerScores, computerScores);
 
-    if (!confirm("Do you want to play again?")) {
-        alert("You canceled the game!");
-        break;
-    }
-}
+//     if (!confirm("Do you want to play again?")) {
+//         alert("You canceled the game!");
+//         break;
+//     }
+// }
 
 
 // This function randomly return the string 'Rock', 'Paper', or 'Scissors'
