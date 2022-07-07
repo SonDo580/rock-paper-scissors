@@ -111,7 +111,7 @@ function decideRoundResult(playerSelection, computerSelection) {
         || playerSelection === SCISSORS && computerSelection === PAPER
     ) {
         return WON;
-        
+
     } else {
         return TIED;
     }
@@ -147,17 +147,17 @@ function convertSelection(selection) {
 
 // This function show the final result of the game
 function showFinalResult(playerScores, computerScores) {
-    let result;
+    let finalResult;
 
     if (playerScores < computerScores) {
-        result = "You lost!"
+        finalResult = "You lost!"
     } else if (playerScores > computerScores) {
-        result = "You win!"
+        finalResult = "You win!"
     } else {
-        result = "Tied game!"
+        finalResult = "Tied game!"
     }
 
     alert(`You win ${playerScores} ${playerScores === 1 ? 'round' : 'rounds'}. 
 Computer wins ${computerScores} ${computerScores === 1 ? 'round' : 'rounds'}.
-=> ${result}`)
+=> ${finalResult}`)
 }
