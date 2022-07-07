@@ -60,7 +60,7 @@ while (true) {
 }
 
 
-// This function randomly return the string 'ROCK', 'PAPER', or 'SCISSORS'
+// This function randomly return the string 'Rock', 'Paper', or 'Scissors'
 function computerPlay() {
     const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max + 1 - min) + min);
@@ -87,7 +87,8 @@ function getInput(rounds) {
 
         // use "==" when comparing to allow type conversion
         if (choice == 1 || choice == 2 || choice == 3) {
-            return +choice;     // convert the choice to number
+            return convertSelection(choice);    // return "Rock", "Paper", or "Scissors"
+            console.log(convertSelection(choice));
         } else if (choice === null) {
             return choice;
         } else {
@@ -119,13 +120,13 @@ function printRoundResult(playerSelection, computerSelection) {
     computerSelection = convertSelection(computerSelection);
 
     switch (result) {
-        case -1:
+        case LOST:
             alert(`You lost! ${computerSelection} beats ${playerSelection}`);
             break;
-        case 1:
+        case WON:
             alert(`You won! ${playerSelection} beats ${computerSelection}`);
             break;
-        case 0:
+        case TIED:
             alert("Tied match!");
             break;
         default:
