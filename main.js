@@ -62,7 +62,7 @@ while (true) {
 }
 
 
-// This function randomly return 1, 2, or 3 (corresponds to Rock, Paper, Scissor)
+// This function randomly return the string 'ROCK', 'PAPER', or 'SCISSORS'
 function computerPlay() {
     const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max + 1 - min) + min);
