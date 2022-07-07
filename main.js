@@ -78,9 +78,9 @@ function getInput(rounds) {
             1. Rock
             2. Paper
             3. Scissors`
-        );
+        );  
 
-        // use "==" when comparing to allow type conversion
+        // choice is a string, so I use "==" to allow type conversion
         if (choice == 1 || choice == 2 || choice == 3) {     
             return convertSelection(+choice);    // return "Rock", "Paper", or "Scissors"
         } else if (choice === null) {
