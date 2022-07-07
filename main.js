@@ -46,9 +46,8 @@ while (true) {
 
         rounds++;
     }
-
-    // This is when the player cancels in the middle of the game
-    if (canceled) {
+    
+    if (canceled) {     // This is when the player cancels in the middle of the game
         alert("You canceled the game!");
         break;
     }
@@ -62,7 +61,7 @@ while (true) {
 }
 
 
-// This function randomly return the string 'Rock', 'Paper', or 'Scissors'
+// This function randomly returns the string 'Rock', 'Paper', or 'Scissors'
 function computerPlay() {
     const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max + 1 - min) + min);
@@ -77,8 +76,8 @@ function computerPlay() {
 function getInput(rounds) {
     // Keep asking until the player entered a valid option
     while (true) {
-        // At first I used the "+" operator (+prompt(...)) to convert the input to number.
-        // But if the user click "Cancel", "choice" will be null. Then it'll be converted to 0.
+        // At first I used the "+" operator (+prompt(...)) to convert the input to number right away.
+        // But if the user click "Cancel", "choice" will be "null". Then it'll be converted to 0.
         // So "choice === null" (in the else if) will never be true.
         let choice = prompt(
             `ROUND ${rounds} - Choose an option:
@@ -99,7 +98,7 @@ function getInput(rounds) {
     }
 }
 
-// This function decide the result of each round
+// This function decides the result of each round
 function decideRoundResult(playerSelection, computerSelection) {
     if (playerSelection === SCISSORS && computerSelection === ROCK
         || playerSelection === ROCK && computerSelection === PAPER
@@ -146,7 +145,7 @@ function convertSelection(selection) {
     );
 }
 
-// This function show the final result of the game
+// This function shows the final result of the game
 function showFinalResult(playerScores, computerScores) {
     let finalResult;
 
