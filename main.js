@@ -96,7 +96,6 @@ function getInput(rounds) {
     }
 }
 
-// This function decides the result of each round
 function decideRoundResult(playerSelection, computerSelection) {
     if (playerSelection === SCISSORS && computerSelection === ROCK
         || playerSelection === ROCK && computerSelection === PAPER
@@ -115,7 +114,6 @@ function decideRoundResult(playerSelection, computerSelection) {
     }
 }
 
-// This function prints the result of each round
 function printRoundResult(playerSelection, computerSelection) {
     let result = decideRoundResult(playerSelection, computerSelection);
 
@@ -143,7 +141,6 @@ function convertSelection(selection) {
     );
 }
 
-// This function shows the final result of the game
 function showFinalResult(playerScores, computerScores) {
     let finalResult;
 
