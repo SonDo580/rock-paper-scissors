@@ -66,11 +66,9 @@ function computerPlay() {
         return Math.floor(Math.random() * (max + 1 - min) + min);
     }
 
-    return (
-        getRandomInt(1, 3) === 1 ? ROCK
-            : getRandomInt(1, 3) === 2 ? PAPER
-                : SCISSORS
-    );
+    let computerSelection = getRandomInt(1, 3);
+
+    return convertSelection(computerSelection);
 }
 
 // Ask the player to choose an option
@@ -135,7 +133,7 @@ function printRoundResult(playerSelection, computerSelection) {
     }
 }
 
-// This function converts the selection value (1, 2, 3) to the corresponding string
+// This function converts (1, 2, 3) to ('Rock', 'Paper', 'Scissors')
 function convertSelection(selection) {
     return (
         selection === 1 ? ROCK
