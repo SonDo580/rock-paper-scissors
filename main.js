@@ -1,5 +1,7 @@
 // Define constants
-// At first I used numeric value, but that's too vagued
+// At first I used numeric values, but they are not very descriptive
+// Strings take longer to type, and it's easy to mistype it
+// So I decided to use constants
 const WON = 'WON';
 const LOST = 'LOST';
 const TIED = 'TIED';
@@ -28,13 +30,13 @@ while (true) {
             // In some language, there's something called "pass by reference", besides "pass by value".
             // But in JavaScript, only Objects are passed by reference
             switch (decideRoundResult(playerSelection, computerSelection)) {
-                case WON:     // player won
+                case WON:    
                     playerScores++;
                     break;
-                case LOST:    // player lost
+                case LOST:    
                     computerScores++;
                     break;
-                case TIED:     // tied
+                case TIED:    
                     break;
                 default:
                     alert("Something is wrong!");
