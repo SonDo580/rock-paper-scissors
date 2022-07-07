@@ -117,9 +117,6 @@ function decideRoundResult(playerSelection, computerSelection) {
 function printRoundResult(playerSelection, computerSelection) {
     let result = decideRoundResult(playerSelection, computerSelection);
 
-    playerSelection = convertSelection(playerSelection);
-    computerSelection = convertSelection(computerSelection);
-
     switch (result) {
         case LOST:
             alert(`You lost! ${computerSelection} beats ${playerSelection}`);
