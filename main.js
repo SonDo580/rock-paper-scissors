@@ -81,9 +81,8 @@ function getInput(rounds) {
         );
 
         // use "==" when comparing to allow type conversion
-        if (choice == 1 || choice == 2 || choice == 3) {
-            choice = +choice;       // convert the input to number
-            return convertSelection(choice);    // return "Rock", "Paper", or "Scissors"
+        if (choice == 1 || choice == 2 || choice == 3) {     
+            return convertSelection(+choice);    // return "Rock", "Paper", or "Scissors"
         } else if (choice === null) {
             return choice;
         } else {
