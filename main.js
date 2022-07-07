@@ -100,16 +100,20 @@ function getInput(rounds) {
 
 // This function decide the result of each round
 function decideRoundResult(playerSelection, computerSelection) {
-    if (computerSelection === 1 && playerSelection === 3) {
-        return LOST;   // the player lost
-    } else if (playerSelection === 1 && computerSelection === 3) {
-        return WON;   // the player won
-    } else if (playerSelection < computerSelection) {
+    if (playerSelection === SCISSORS && computerSelection === ROCK
+        || playerSelection === ROCK && computerSelection === PAPER
+        || playerSelection === PAPER && computerSelection === SCISSORS
+    ) {
         return LOST;
-    } else if (playerSelection > computerSelection) {
+
+    } else if (playerSelection === ROCK && computerSelection === SCISSORS
+        || playerSelection === PAPER && computerSelection === ROCK
+        || playerSelection === SCISSORS && computerSelection === PAPER
+    ) {
         return WON;
+        
     } else {
-        return TIED;   // a tie
+        return TIED;
     }
 }
 
