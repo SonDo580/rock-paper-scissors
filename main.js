@@ -138,9 +138,9 @@ function printRoundResult(playerSelection, computerSelection) {
 // This function converts the selection value (1, 2, 3) to the corresponding string
 function convertSelection(selection) {
     return (
-        selection === 1 ? "rock"
-            : selection === 2 ? "paper"
-                : "scissors"
+        selection === 1 ? ROCK
+            : selection === 2 ? PAPER
+                : SCISSORS
     );
 }
 
