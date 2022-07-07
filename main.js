@@ -3,17 +3,15 @@
 const WON = 'WON';
 const LOST = 'LOST';
 const TIED = 'TIED';
-const ROCK = 'ROCK';
-const PAPER = 'PAPER';
-const SCISSORS = 'SCISSORS';
+const ROCK = 'Rock';
+const PAPER = 'Paper';
+const SCISSORS = 'Scissors';
 
 while (true) {
     let playerScores = 0;
     let computerScores = 0;
     let rounds = 1;
     let canceled = false;
-
-
 
     while (rounds <= 5) {
         // start round
