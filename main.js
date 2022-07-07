@@ -1,17 +1,19 @@
+// Define constants
+// At first I used numeric value, but that's too vagued
+const WON = 'WON';
+const LOST = 'LOST';
+const TIED = 'TIED';
+const ROCK = 'ROCK';
+const PAPER = 'PAPER';
+const SCISSORS = 'SCISSORS';
+
 while (true) {
     let playerScores = 0;
     let computerScores = 0;
     let rounds = 1;
     let canceled = false;
 
-    // Define constants
-    // At first I used numeric value, but that's too vagued
-    const WON = 'WON';
-    const LOST = 'LOST';
-    const TIED = 'TIED';
-    const ROCK = 'ROCK';
-    const PAPER = 'PAPER';
-    const SCISSORS = 'SCISSORS';
+
 
     while (rounds <= 5) {
         // start round
@@ -46,7 +48,7 @@ while (true) {
     }
 
     // This is when the player cancels in the middle of the game
-    if(canceled) {
+    if (canceled) {
         alert("You canceled the game!");
         break;
     }
@@ -66,7 +68,11 @@ function computerPlay() {
         return Math.floor(Math.random() * (max + 1 - min) + min);
     }
 
-    return getRandomInt(1, 3);
+    return (
+        getRandomInt(1, 3) === 1 ? ROCK
+            : getRandomInt(1, 3) === 2 ? PAPER
+                : SCISSORS
+    );
 }
 
 // Ask the player to choose an option
@@ -96,14 +102,14 @@ function getInput(rounds) {
 
 // This function decide the result of each round
 function decideRoundResult(playerSelection, computerSelection) {
-    if (computerSelection === 1 && playerSelection === 3) {            
+    if (computerSelection === 1 && playerSelection === 3) {
         return LOST;   // the player lost
-    } else if (playerSelection === 1 && computerSelection === 3) {      
+    } else if (playerSelection === 1 && computerSelection === 3) {
         return WON;   // the player won
-    } else if (playerSelection < computerSelection) {       
-        return LOST;   
-    } else if (playerSelection > computerSelection) {      
-        return WON;   
+    } else if (playerSelection < computerSelection) {
+        return LOST;
+    } else if (playerSelection > computerSelection) {
+        return WON;
     } else {
         return TIED;   // a tie
     }
