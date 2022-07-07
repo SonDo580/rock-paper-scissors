@@ -4,6 +4,15 @@ while (true) {
     let rounds = 1;
     let canceled = false;
 
+    // Define constant
+    const WON = 'WON';
+    const LOST = 'LOST';
+    const TIED = 'TIED';
+    
+    const ROCK = 'ROCK';
+    const PAPER = 'PAPER';
+    const SCISSORS = 'SCISSORS';
+
     while (rounds <= 5) {
         // start round
         let computerSelection = computerPlay();
