@@ -18,6 +18,7 @@ while (true) {
     while (rounds <= 5) {
         let computerSelection = computerPlay();
         let playerSelection = getInput(rounds);
+        
         if (playerSelection === null) {
             canceled = true;
             break;
@@ -25,9 +26,6 @@ while (true) {
             printRoundResult(playerSelection, computerSelection);
 
             // Update the score
-            // At first I used a function to do this, but it can't modify playerScores and computerScores
-            // In some language, there's something called "pass by reference", besides "pass by value".
-            // But in JavaScript, only Objects are passed by reference
             switch (decideRoundResult(playerSelection, computerSelection)) {
                 case WON:    
                     playerScores++;
