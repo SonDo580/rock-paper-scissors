@@ -13,10 +13,9 @@ while (true) {
     let playerScores = 0;
     let computerScores = 0;
     let rounds = 1;
-    let canceled = false;   // becomes "true" if the player cancel in the middle of a game
+    let canceled = false;   
 
     while (rounds <= 5) {
-        // start round
         let computerSelection = computerPlay();
         let playerSelection = getInput(rounds);
         if (playerSelection === null) {
@@ -42,12 +41,11 @@ while (true) {
                     alert("Something is wrong!");
             }
         }
-        // end round
 
         rounds++;
     }
     
-    if (canceled) {     // This is when the player cancels in the middle of the game
+    if (canceled) {     
         alert("You canceled the game!");
         break;
     }
