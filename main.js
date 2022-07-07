@@ -88,7 +88,6 @@ function getInput(rounds) {
         // use "==" when comparing to allow type conversion
         if (choice == 1 || choice == 2 || choice == 3) {
             choice = +choice;       // convert to number
-            console.log(convertSelection(choice));
             return convertSelection(choice);    // return "Rock", "Paper", or "Scissors"
         } else if (choice === null) {
             return choice;
@@ -136,7 +135,7 @@ function printRoundResult(playerSelection, computerSelection) {
     }
 }
 
-// This function converts (1, 2, 3) to ('Rock', 'Paper', 'Scissors')
+// This function converts number (1, 2, 3) to string ('Rock', 'Paper', 'Scissors')
 function convertSelection(selection) {
     return (
         selection === 1 ? ROCK
