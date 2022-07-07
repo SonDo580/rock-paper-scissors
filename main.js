@@ -1,7 +1,3 @@
-// Define constants
-// At first I used numeric values, but they are not very descriptive
-// Strings take longer to type, and it's easy to mistype it
-// So I decided to use constants
 const WON = 'WON';
 const LOST = 'LOST';
 const TIED = 'TIED';
