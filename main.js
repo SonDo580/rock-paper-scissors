@@ -4,11 +4,11 @@ while (true) {
     let rounds = 1;
     let canceled = false;
 
-    // Define constant
+    // Define constants
+    // At first I used numeric value, but that's too vagued
     const WON = 'WON';
     const LOST = 'LOST';
     const TIED = 'TIED';
-    
     const ROCK = 'ROCK';
     const PAPER = 'PAPER';
     const SCISSORS = 'SCISSORS';
@@ -96,16 +96,16 @@ function getInput(rounds) {
 
 // This function decide the result of each round
 function decideRoundResult(playerSelection, computerSelection) {
-    if (computerSelection === 1 && playerSelection === 3) {             // player: scissors, computer: rock
-        return -1;   // the player lost
-    } else if (playerSelection === 1 && computerSelection === 3) {      // player: rock, computer: scissors
-        return 1;   // the player won
-    } else if (playerSelection < computerSelection) {       // paper beats rock, scissors beat paper
-        return -1;   // the player lost
-    } else if (playerSelection > computerSelection) {       // paper beats rock, scissors beat paper
-        return 1;   // the player won
+    if (computerSelection === 1 && playerSelection === 3) {            
+        return LOST;   // the player lost
+    } else if (playerSelection === 1 && computerSelection === 3) {      
+        return WON;   // the player won
+    } else if (playerSelection < computerSelection) {       
+        return LOST;   
+    } else if (playerSelection > computerSelection) {      
+        return WON;   
     } else {
-        return 0;   // a tie
+        return TIED;   // a tie
     }
 }
 
