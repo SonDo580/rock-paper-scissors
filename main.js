@@ -70,13 +70,9 @@ function computerPlay() {
     return convertSelection(computerSelection);
 }
 
-// Ask the player to choose an option
 function getInput(rounds) {
     // Keep asking until the player entered a valid option
     while (true) {
-        // At first I used the "+" operator (+prompt(...)) to convert the input to number right away.
-        // But if the user click "Cancel", "choice" will be "null". Then it'll be converted to 0.
-        // So "choice === null" (in the else if) will never be true.
         let choice = prompt(
             `ROUND ${rounds} - Choose an option:
             1. Rock
@@ -86,7 +82,7 @@ function getInput(rounds) {
 
         // use "==" when comparing to allow type conversion
         if (choice == 1 || choice == 2 || choice == 3) {
-            choice = +choice;       // convert to number
+            choice = +choice;       // convert the input to number
             return convertSelection(choice);    // return "Rock", "Paper", or "Scissors"
         } else if (choice === null) {
             return choice;
