@@ -13,6 +13,9 @@ const resultDiv = document.querySelector('#result');
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
 
+const playerScoresBox = document.querySelector('.player .score');
+const computerScoresBox = document.querySelector('.computer .score');
+
 function playRound(e) {
     let playerSelection = e.target.textContent;
     let computerSelection = computerPlay();
