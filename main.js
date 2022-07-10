@@ -8,11 +8,14 @@ const SCISSORS = 'Scissors';
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
 
+const resultDiv = document.querySelector('#result');
+
+
 function playRound(e) {
     let playerSelection = e.target.textContent;
     let computerSelection = computerPlay();
 
-    console.log(decideRoundResult(playerSelection, computerSelection));
+    resultDiv.textContent = decideRoundResult(playerSelection, computerSelection);
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
@@ -41,6 +44,24 @@ function decideRoundResult(playerSelection, computerSelection) {
 
     } else {
         return TIED;
+    }
+}
+
+function showRoundResult(playerSelection, computerSelection) {
+    let result = decideRoundResult(playerSelection, computerSelection);
+
+    switch (result) {
+        case LOST:
+            return `You lost! ${computerSelection} beats ${playerSelection}`;
+            break;
+        case WON:
+            return `You won! ${playerSelection} beats ${computerSelection}`;
+            break;
+        case TIED:
+            return "Tied match!";
+            break;
+        default:
+            alert("Something is wrong!");
     }
 }
 
@@ -97,23 +118,7 @@ function convertSelection(selection) {
 //     }
 // }
 
-// function printRoundResult(playerSelection, computerSelection) {
-//     let result = decideRoundResult(playerSelection, computerSelection);
 
-//     switch (result) {
-//         case LOST:
-//             alert(`You lost! ${computerSelection} beats ${playerSelection}`);
-//             break;
-//         case WON:
-//             alert(`You won! ${playerSelection} beats ${computerSelection}`);
-//             break;
-//         case TIED:
-//             alert("Tied match!");
-//             break;
-//         default:
-//             alert("Something is wrong!");
-//     }
-// }
 
 
 
