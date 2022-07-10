@@ -5,13 +5,13 @@ const ROCK = 'Rock';
 const PAPER = 'Paper';
 const SCISSORS = 'Scissors';
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('click', playRound));
+let playerScores = 0;
+let computerScores = 0;
 
 const resultDiv = document.querySelector('#result');
 
-let playerScores = 0;
-let computerScores = 0;
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 function playRound(e) {
     let playerSelection = e.target.textContent;
@@ -33,13 +33,16 @@ function playRound(e) {
             alert("Something is wrong!");
     }
 
-    if (playerScores === 5 || computerScores === 5) {
-        // Announce the winner
+    console.log(playerScores);
+    console.log(computerScores);
 
-        // Ask if the player want to play again
-
+    if (playerScores === 5) {
+        resultDiv.textContent = "You won the game!";
+    } else if (computerScores === 5) {
+        resultDiv.textContent = "You lost the game!";
     }
 }
+
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
 function computerPlay() {
@@ -95,16 +98,6 @@ function convertSelection(selection) {
             : selection === 2 ? PAPER
                 : SCISSORS
     );
-}
-
-function showFinalResult(playerScores, computerScores) {
-    if (playerScores < computerScores) {
-        return "You lost!"
-    } else if (playerScores > computerScores) {
-        return "You win!"
-    } else {
-        return "Tied game!"
-    }
 }
 
 // while (true) {
