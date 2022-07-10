@@ -15,6 +15,8 @@ buttons.forEach(button => button.addEventListener('click', playRound));
 
 const playerScoresBox = document.querySelector('.player .score');
 const computerScoresBox = document.querySelector('.computer .score');
+playerScoresBox.textContent = 0;
+computerScoresBox.textContent = 0;
 
 function playRound(e) {
     let playerSelection = e.target.textContent;
@@ -41,10 +43,14 @@ function playRound(e) {
     if (playerScores === 5 || computerScores === 5) {
         // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
-    
+
         // Reset the score
         playerScores = 0;
         computerScores = 0;
+
+        
+        playerScoresBox.textContent = 0;
+        computerScoresBox.textContent = 0;
     }
 }
 
@@ -107,9 +113,9 @@ function convertSelection(selection) {
 
 function showFinalResult(playerScores, computerScores) {
     if (playerScores < computerScores) {
-        return `You: ${playerScores} - Computer: ${computerScores} => You lost!`
+        return `You lost! Continue playing? (Y/N)`;
     } else if (playerScores > computerScores) {
-        return `You: ${playerScores} - Computer: ${computerScores} => You won!`
+        return `You won! Continue playing? (Y/N)`;
     }
 }
 
