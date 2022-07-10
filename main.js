@@ -68,30 +68,6 @@ function computerPlay() {
 //     }
 // }
 
-
-
-
-// function getInput(rounds) {
-//     // Keep asking until the player entered a valid option
-//     while (true) {
-//         let choice = prompt(
-//             `ROUND ${rounds} - Choose an option:
-//             1. Rock
-//             2. Paper
-//             3. Scissors`
-//         );  
-
-//         // choice is a string, so I use "==" to allow type conversion
-//         if (choice == 1 || choice == 2 || choice == 3) {     
-//             return convertSelection(+choice);    // return "Rock", "Paper", or "Scissors"
-//         } else if (choice === null) {
-//             return choice;
-//         } else {
-//             alert("You should press 1, 2, or 3");
-//         }
-//     }
-// }
-
 // function decideRoundResult(playerSelection, computerSelection) {
 //     if (playerSelection === SCISSORS && computerSelection === ROCK
 //         || playerSelection === ROCK && computerSelection === PAPER
