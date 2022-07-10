@@ -37,10 +37,12 @@ function playRound(e) {
     console.log(computerScores);
 
     if (playerScores === 5 || computerScores === 5) {
+        // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
     
-        // Ask if the player want to play again
-    
+        // Reset the score
+        playerScores = 0;
+        computerScores = 0;
     }
 }
 
@@ -103,9 +105,9 @@ function convertSelection(selection) {
 
 function showFinalResult(playerScores, computerScores) {
     if (playerScores < computerScores) {
-        return "You lost the game!"
+        return `You: ${playerScores} - Computer: ${computerScores} => You lost!`
     } else if (playerScores > computerScores) {
-        return "You win the game!"
+        return `You: ${playerScores} - Computer: ${computerScores} => You won!`
     }
 }
 
