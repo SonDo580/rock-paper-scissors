@@ -1,59 +1,19 @@
-const WON = 'WON';
-const LOST = 'LOST';
-const TIED = 'TIED';
-const ROCK = 'Rock';
-const PAPER = 'Paper';
-const SCISSORS = 'Scissors';
+// const WON = 'WON';
+// const LOST = 'LOST';
+// const TIED = 'TIED';
+// const ROCK = 'Rock';
+// const PAPER = 'Paper';
+// const SCISSORS = 'Scissors';
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
 
-while (true) {
-    let playerScores = 0;
-    let computerScores = 0;
-    let canceled = false;   
-
-    while (true) {
-        let computerSelection = computerPlay();
-        let playerSelection = getInput(rounds);
-        
-        if (playerSelection === null) {
-            canceled = true;
-            break;
-        } else {
-            printRoundResult(playerSelection, computerSelection);
-
-            // Update the score
-            switch (decideRoundResult(playerSelection, computerSelection)) {
-                case WON:    
-                    playerScores++;
-                    break;
-                case LOST:    
-                    computerScores++;
-                    break;
-                case TIED:    
-                    break;
-                default:
-                    alert("Something is wrong!");
-            }
-        }
-    }
-    
-    if (canceled) {     
-        alert("You canceled the game!");
-        break;
-    }
-
-    showFinalResult(playerScores, computerScores);
-
-    if (!confirm("Do you want to play again?")) {
-        alert("You canceled the game!");
-        break;
-    }
+function playRound(e) {
+    let playerSelection = e.target.textContent;
+    let computerSelection = computerPlay();
 }
 
-
-// This function randomly returns the string 'Rock', 'Paper', or 'Scissors'
+// This function randomly returns 'Rock', 'Paper', or 'Scissors'
 function computerPlay() {
     const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max + 1 - min) + min);
@@ -64,84 +24,131 @@ function computerPlay() {
     return convertSelection(computerSelection);
 }
 
-function getInput(rounds) {
-    // Keep asking until the player entered a valid option
-    while (true) {
-        let choice = prompt(
-            `ROUND ${rounds} - Choose an option:
-            1. Rock
-            2. Paper
-            3. Scissors`
-        );  
+// while (true) {
+//     let playerScores = 0;
+//     let computerScores = 0;
+//     let canceled = false;   
 
-        // choice is a string, so I use "==" to allow type conversion
-        if (choice == 1 || choice == 2 || choice == 3) {     
-            return convertSelection(+choice);    // return "Rock", "Paper", or "Scissors"
-        } else if (choice === null) {
-            return choice;
-        } else {
-            alert("You should press 1, 2, or 3");
-        }
-    }
-}
+//     while (true) {
+//         let computerSelection = computerPlay();
+//         let playerSelection = getInput(rounds);
+        
+//         if (playerSelection === null) {
+//             canceled = true;
+//             break;
+//         } else {
+//             printRoundResult(playerSelection, computerSelection);
 
-function decideRoundResult(playerSelection, computerSelection) {
-    if (playerSelection === SCISSORS && computerSelection === ROCK
-        || playerSelection === ROCK && computerSelection === PAPER
-        || playerSelection === PAPER && computerSelection === SCISSORS
-    ) {
-        return LOST;
+//             // Update the score
+//             switch (decideRoundResult(playerSelection, computerSelection)) {
+//                 case WON:    
+//                     playerScores++;
+//                     break;
+//                 case LOST:    
+//                     computerScores++;
+//                     break;
+//                 case TIED:    
+//                     break;
+//                 default:
+//                     alert("Something is wrong!");
+//             }
+//         }
+//     }
+    
+//     if (canceled) {     
+//         alert("You canceled the game!");
+//         break;
+//     }
 
-    } else if (playerSelection === ROCK && computerSelection === SCISSORS
-        || playerSelection === PAPER && computerSelection === ROCK
-        || playerSelection === SCISSORS && computerSelection === PAPER
-    ) {
-        return WON;
+//     showFinalResult(playerScores, computerScores);
 
-    } else {
-        return TIED;
-    }
-}
+//     if (!confirm("Do you want to play again?")) {
+//         alert("You canceled the game!");
+//         break;
+//     }
+// }
 
-function printRoundResult(playerSelection, computerSelection) {
-    let result = decideRoundResult(playerSelection, computerSelection);
 
-    switch (result) {
-        case LOST:
-            alert(`You lost! ${computerSelection} beats ${playerSelection}`);
-            break;
-        case WON:
-            alert(`You won! ${playerSelection} beats ${computerSelection}`);
-            break;
-        case TIED:
-            alert("Tied match!");
-            break;
-        default:
-            alert("Something is wrong!");
-    }
-}
 
-// This function converts number (1, 2, 3) to string ('Rock', 'Paper', 'Scissors')
-function convertSelection(selection) {
-    return (
-        selection === 1 ? ROCK
-            : selection === 2 ? PAPER
-                : SCISSORS
-    );
-}
 
-function showFinalResult(playerScores, computerScores) {
-    let finalResult;
+// function getInput(rounds) {
+//     // Keep asking until the player entered a valid option
+//     while (true) {
+//         let choice = prompt(
+//             `ROUND ${rounds} - Choose an option:
+//             1. Rock
+//             2. Paper
+//             3. Scissors`
+//         );  
 
-    if (playerScores < computerScores) {
-        finalResult = "You lost!"
-    } else if (playerScores > computerScores) {
-        finalResult = "You win!"
-    } else {
-        finalResult = "Tied game!"
-    }
+//         // choice is a string, so I use "==" to allow type conversion
+//         if (choice == 1 || choice == 2 || choice == 3) {     
+//             return convertSelection(+choice);    // return "Rock", "Paper", or "Scissors"
+//         } else if (choice === null) {
+//             return choice;
+//         } else {
+//             alert("You should press 1, 2, or 3");
+//         }
+//     }
+// }
 
-    alert(`You win ${playerScores} ${playerScores === 1 ? 'round' : 'rounds'}. 
-Computer wins ${computerScores} ${computerScores === 1 ? 'round' : 'rounds'}.
-=> ${finalResult}`)
-}
+// function decideRoundResult(playerSelection, computerSelection) {
+//     if (playerSelection === SCISSORS && computerSelection === ROCK
+//         || playerSelection === ROCK && computerSelection === PAPER
+//         || playerSelection === PAPER && computerSelection === SCISSORS
+//     ) {
+//         return LOST;
+
+//     } else if (playerSelection === ROCK && computerSelection === SCISSORS
+//         || playerSelection === PAPER && computerSelection === ROCK
+//         || playerSelection === SCISSORS && computerSelection === PAPER
+//     ) {
+//         return WON;
+
+//     } else {
+//         return TIED;
+//     }
+// }
+
+// function printRoundResult(playerSelection, computerSelection) {
+//     let result = decideRoundResult(playerSelection, computerSelection);
+
+//     switch (result) {
+//         case LOST:
+//             alert(`You lost! ${computerSelection} beats ${playerSelection}`);
+//             break;
+//         case WON:
+//             alert(`You won! ${playerSelection} beats ${computerSelection}`);
+//             break;
+//         case TIED:
+//             alert("Tied match!");
+//             break;
+//         default:
+//             alert("Something is wrong!");
+//     }
+// }
+
+// // This function converts number (1, 2, 3) to string ('Rock', 'Paper', 'Scissors')
+// function convertSelection(selection) {
+//     return (
+//         selection === 1 ? ROCK
+//             : selection === 2 ? PAPER
+//                 : SCISSORS
+//     );
+// }
+
+// function showFinalResult(playerScores, computerScores) {
+//     let finalResult;
+
+//     if (playerScores < computerScores) {
+//         finalResult = "You lost!"
+//     } else if (playerScores > computerScores) {
+//         finalResult = "You win!"
+//     } else {
+//         finalResult = "Tied game!"
+//     }
+
+//     alert(`You win ${playerScores} ${playerScores === 1 ? 'round' : 'rounds'}. 
+// Computer wins ${computerScores} ${computerScores === 1 ? 'round' : 'rounds'}.
+// => ${finalResult}`)
+// }
