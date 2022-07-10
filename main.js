@@ -97,6 +97,16 @@ function convertSelection(selection) {
     );
 }
 
+function showFinalResult(playerScores, computerScores) {
+    if (playerScores < computerScores) {
+        return "You lost!"
+    } else if (playerScores > computerScores) {
+        return "You win!"
+    } else {
+        return "Tied game!"
+    }
+}
+
 // while (true) {
 //     let playerScores = 0;
 //     let computerScores = 0;
@@ -145,18 +155,3 @@ function convertSelection(selection) {
 
 
 
-// function showFinalResult(playerScores, computerScores) {
-//     let finalResult;
-
-//     if (playerScores < computerScores) {
-//         finalResult = "You lost!"
-//     } else if (playerScores > computerScores) {
-//         finalResult = "You win!"
-//     } else {
-//         finalResult = "Tied game!"
-//     }
-
-//     alert(`You win ${playerScores} ${playerScores === 1 ? 'round' : 'rounds'}. 
-// Computer wins ${computerScores} ${computerScores === 1 ? 'round' : 'rounds'}.
-// => ${finalResult}`)
-// }
