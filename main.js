@@ -10,12 +10,35 @@ buttons.forEach(button => button.addEventListener('click', playRound));
 
 const resultDiv = document.querySelector('#result');
 
+let playerScores = 0;
+let computerScores = 0;
 
 function playRound(e) {
     let playerSelection = e.target.textContent;
     let computerSelection = computerPlay();
 
-    resultDiv.textContent = decideRoundResult(playerSelection, computerSelection);
+    resultDiv.textContent = showRoundResult(playerSelection, computerSelection);
+
+    // Update the score
+    switch (decideRoundResult(playerSelection, computerSelection)) {
+        case WON:    
+            playerScores++;
+            break;
+        case LOST:    
+            computerScores++;
+            break;
+        case TIED:    
+            break;
+        default:
+            alert("Something is wrong!");
+    }
+
+    if (playerScores === 5 || computerScores === 5) {
+        // Announce the winner
+
+        // Ask if the player want to play again
+
+    }
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
@@ -52,10 +75,10 @@ function showRoundResult(playerSelection, computerSelection) {
 
     switch (result) {
         case LOST:
-            return `You lost! ${computerSelection} beats ${playerSelection}`;
+            return `You lost this round! ${computerSelection} beats ${playerSelection}`;
             break;
         case WON:
-            return `You won! ${playerSelection} beats ${computerSelection}`;
+            return `You won this round! ${playerSelection} beats ${computerSelection}`;
             break;
         case TIED:
             return "Tied match!";
