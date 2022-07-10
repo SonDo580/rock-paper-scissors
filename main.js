@@ -5,6 +5,9 @@ const ROCK = 'Rock';
 const PAPER = 'Paper';
 const SCISSORS = 'Scissors';
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', playRound));
+
 while (true) {
     let playerScores = 0;
     let computerScores = 0;
