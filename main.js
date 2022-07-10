@@ -36,10 +36,11 @@ function playRound(e) {
     console.log(playerScores);
     console.log(computerScores);
 
-    if (playerScores === 5) {
-        resultDiv.textContent = "You won the game!";
-    } else if (computerScores === 5) {
-        resultDiv.textContent = "You lost the game!";
+    if (playerScores === 5 || computerScores === 5) {
+        resultDiv.textContent = showFinalResult(playerScores, computerScores);
+    
+        // Ask if the player want to play again
+    
     }
 }
 
@@ -98,6 +99,14 @@ function convertSelection(selection) {
             : selection === 2 ? PAPER
                 : SCISSORS
     );
+}
+
+function showFinalResult(playerScores, computerScores) {
+    if (playerScores < computerScores) {
+        return "You lost the game!"
+    } else if (playerScores > computerScores) {
+        return "You win the game!"
+    }
 }
 
 // while (true) {
