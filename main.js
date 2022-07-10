@@ -44,13 +44,14 @@ function playRound(e) {
         // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
 
-        // Reset the score
-        playerScores = 0;
-        computerScores = 0;
+        // window.addEventListener('keydown', playAgain);
 
-        
-        playerScoresBox.textContent = 0;
-        computerScoresBox.textContent = 0;
+
+        // Reset the score
+        // playerScores = 0;
+        // computerScores = 0;
+        // playerScoresBox.textContent = 0;
+        // computerScoresBox.textContent = 0;
     }
 }
 
