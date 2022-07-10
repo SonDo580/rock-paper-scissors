@@ -1,9 +1,9 @@
-// const WON = 'WON';
-// const LOST = 'LOST';
-// const TIED = 'TIED';
-// const ROCK = 'Rock';
-// const PAPER = 'Paper';
-// const SCISSORS = 'Scissors';
+const WON = 'WON';
+const LOST = 'LOST';
+const TIED = 'TIED';
+const ROCK = 'Rock';
+const PAPER = 'Paper';
+const SCISSORS = 'Scissors';
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
@@ -11,6 +11,8 @@ buttons.forEach(button => button.addEventListener('click', playRound));
 function playRound(e) {
     let playerSelection = e.target.textContent;
     let computerSelection = computerPlay();
+
+    console.log(decideRoundResult(playerSelection, computerSelection));
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
@@ -22,6 +24,33 @@ function computerPlay() {
     let computerSelection = getRandomInt(1, 3);
 
     return convertSelection(computerSelection);
+}
+
+function decideRoundResult(playerSelection, computerSelection) {
+    if (playerSelection === SCISSORS && computerSelection === ROCK
+        || playerSelection === ROCK && computerSelection === PAPER
+        || playerSelection === PAPER && computerSelection === SCISSORS
+    ) {
+        return LOST;
+
+    } else if (playerSelection === ROCK && computerSelection === SCISSORS
+        || playerSelection === PAPER && computerSelection === ROCK
+        || playerSelection === SCISSORS && computerSelection === PAPER
+    ) {
+        return WON;
+
+    } else {
+        return TIED;
+    }
+}
+
+// This function converts number (1, 2, 3) to string ('Rock', 'Paper', 'Scissors')
+function convertSelection(selection) {
+    return (
+        selection === 1 ? ROCK
+            : selection === 2 ? PAPER
+                : SCISSORS
+    );
 }
 
 // while (true) {
@@ -68,24 +97,6 @@ function computerPlay() {
 //     }
 // }
 
-// function decideRoundResult(playerSelection, computerSelection) {
-//     if (playerSelection === SCISSORS && computerSelection === ROCK
-//         || playerSelection === ROCK && computerSelection === PAPER
-//         || playerSelection === PAPER && computerSelection === SCISSORS
-//     ) {
-//         return LOST;
-
-//     } else if (playerSelection === ROCK && computerSelection === SCISSORS
-//         || playerSelection === PAPER && computerSelection === ROCK
-//         || playerSelection === SCISSORS && computerSelection === PAPER
-//     ) {
-//         return WON;
-
-//     } else {
-//         return TIED;
-//     }
-// }
-
 // function printRoundResult(playerSelection, computerSelection) {
 //     let result = decideRoundResult(playerSelection, computerSelection);
 
@@ -104,14 +115,7 @@ function computerPlay() {
 //     }
 // }
 
-// // This function converts number (1, 2, 3) to string ('Rock', 'Paper', 'Scissors')
-// function convertSelection(selection) {
-//     return (
-//         selection === 1 ? ROCK
-//             : selection === 2 ? PAPER
-//                 : SCISSORS
-//     );
-// }
+
 
 // function showFinalResult(playerScores, computerScores) {
 //     let finalResult;
