@@ -26,18 +26,17 @@ function playRound(e) {
     switch (decideRoundResult(playerSelection, computerSelection)) {
         case WON:    
             playerScores++;
+            playerScoresBox.textContent = playerScores;
             break;
         case LOST:    
             computerScores++;
+            computerScoresBox.textContent = computerScores;
             break;
         case TIED:    
             break;
         default:
             alert("Something is wrong!");
     }
-
-    console.log(playerScores);
-    console.log(computerScores);
 
     if (playerScores === 5 || computerScores === 5) {
         // Announce the final result
