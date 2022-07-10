@@ -8,45 +8,33 @@ const SCISSORS = 'Scissors';
 while (true) {
     let playerScores = 0;
     let computerScores = 0;
-    let rounds = 1;
-    let canceled = false;   
+    let canceled = false;
 
-    while (rounds <= 5) {
-        let computerSelection = computerPlay();
-        let playerSelection = getInput(rounds);
-        
-        if (playerSelection === null) {
-            canceled = true;
-            break;
-        } else {
-            printRoundResult(playerSelection, computerSelection);
+    let computerSelection = computerPlay();
+    let playerSelection = getInput(rounds);
 
-            // Update the score
-            switch (decideRoundResult(playerSelection, computerSelection)) {
-                case WON:    
-                    playerScores++;
-                    break;
-                case LOST:    
-                    computerScores++;
-                    break;
-                case TIED:    
-                    break;
-                default:
-                    alert("Something is wrong!");
-            }
-        }
-
-        rounds++;
-    }
-    
-    if (canceled) {     
-        alert("You canceled the game!");
+    if (playerSelection === null) {
+        canceled = true;
         break;
+    } else {
+        printRoundResult(playerSelection, computerSelection);
+
+        // Update the score
+        switch (decideRoundResult(playerSelection, computerSelection)) {
+            case WON:
+                playerScores++;
+                break;
+            case LOST:
+                computerScores++;
+                break;
+            case TIED:
+                break;
+            default:
+                alert("Something is wrong!");
+        }
     }
 
-    showFinalResult(playerScores, computerScores);
-
-    if (!confirm("Do you want to play again?")) {
+    if (canceled) {
         alert("You canceled the game!");
         break;
     }
@@ -72,10 +60,10 @@ function getInput(rounds) {
             1. Rock
             2. Paper
             3. Scissors`
-        );  
+        );
 
         // choice is a string, so I use "==" to allow type conversion
-        if (choice == 1 || choice == 2 || choice == 3) {     
+        if (choice == 1 || choice == 2 || choice == 3) {
             return convertSelection(+choice);    // return "Rock", "Paper", or "Scissors"
         } else if (choice === null) {
             return choice;
