@@ -44,7 +44,7 @@ function playRound(e) {
         // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
 
-        // window.addEventListener('keydown', playAgain);
+        window.addEventListener('keydown', playAgain);
 
 
         // Reset the score
@@ -114,9 +114,9 @@ function convertSelection(selection) {
 
 function showFinalResult(playerScores, computerScores) {
     if (playerScores < computerScores) {
-        return `You lost! Continue playing? (Y/N)`;
+        return "You lost! Press any key to play again";
     } else if (playerScores > computerScores) {
-        return `You won! Continue playing? (Y/N)`;
+        return "You won! Press any key to play again";
     }
 }
 
