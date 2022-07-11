@@ -66,9 +66,14 @@ function resetGame() {
     buttons.forEach(button => button.disabled = false);
 }
 
-// This function remove the transition effect from the button
+// This function removes the transition effect from the buttons
 function removeTransition(e) {
-    console.log(e);
+    if (e.propertyName !== 'transform') {
+        return;
+    }
+
+    let button = e.target;
+    button.classList.remove('choosing');
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
