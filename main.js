@@ -58,7 +58,7 @@ function resetGame() {
     computerScoresBox.textContent = 0;
     resultDiv.textContent = '';
 
-    // Activate the buttons again
+    // Re-activate the buttons
     buttons.forEach(button => button.addEventListener('click', playRound));
 }
 
