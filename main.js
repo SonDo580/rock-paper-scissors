@@ -12,6 +12,7 @@ const resultDiv = document.querySelector('#result');
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
 const playerScoresBox = document.querySelector('.player .score');
 const computerScoresBox = document.querySelector('.computer .score');
@@ -63,6 +64,11 @@ function resetGame() {
 
     // Re-activate the buttons
     buttons.forEach(button => button.disabled = false);
+}
+
+// This function remove the transition effect from the button
+function removeTransition(e) {
+    console.log(e);
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
