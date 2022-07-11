@@ -44,6 +44,11 @@ button {
     color: red
 }
 
+button:disabled {
+    background-color: grey;
+    color: white;
+}
+
 #result {
     font-size: 32px;
     color: yellowgreen;
