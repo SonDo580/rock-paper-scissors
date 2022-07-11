@@ -44,17 +44,21 @@ function playRound(e) {
         // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
 
-        window.addEventListener('keydown', playAgain);
-
-
-        // Reset the score
-        // playerScores = 0;
-        // computerScores = 0;
-        // playerScoresBox.textContent = 0;
-        // computerScoresBox.textContent = 0;
+        window.addEventListener('keydown', playAgain, {
+            once: true      // so the player won't be reset in the middle of the next game when they press a key
+        });
+        
     }
 }
 
+function playAgain(e) {
+// Reset the game
+    playerScores = 0;
+    computerScores = 0;
+    playerScoresBox.textContent = 0;
+    computerScoresBox.textContent = 0;
+    resultDiv.textContent = '';
+}
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
 function computerPlay() {
