@@ -43,10 +43,10 @@ function playRound(e) {
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
 
         // Disable the buttons
-        buttons.forEach(button => button.removeEventListener('click'));
+        buttons.forEach(button => button.disabled = true);
 
         window.addEventListener('keydown', resetGame, {
-            once: true      // so the player won't be reset in the middle of the next game when they press a key
+            once: true      // so the player won't be reset in the next game when they accidentally press a key
         });
     }
 }
@@ -59,7 +59,7 @@ function resetGame() {
     resultDiv.textContent = '';
 
     // Re-activate the buttons
-    buttons.forEach(button => button.addEventListener('click', playRound));
+    buttons.forEach(button => button.disabled = false);
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
