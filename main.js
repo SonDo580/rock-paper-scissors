@@ -44,15 +44,14 @@ function playRound(e) {
         // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
 
-        window.addEventListener('keydown', playAgain, {
+        window.addEventListener('keydown', resetGame, {
             once: true      // so the player won't be reset in the middle of the next game when they press a key
         });
         
     }
 }
 
-function playAgain(e) {
-// Reset the game
+function resetGame() {
     playerScores = 0;
     computerScores = 0;
     playerScoresBox.textContent = 0;
