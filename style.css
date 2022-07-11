@@ -6,11 +6,22 @@ body {
 
 .container {
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 100px;
 }
 
 .player, .computer {
     border: 3px solid white;
-    width: 150px;
-    height: 150px;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+
+.player h1, .computer h1 {
+    font-size: 40px;
+}
+
+.score {
+    font-size: 40px;
 }
