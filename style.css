@@ -49,8 +49,8 @@ button {
 /* Add this when the player click a button, then remove */
 .choosing {     
     transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
+    border-color: yellow;
+    box-shadow: 0 0 5px yellow;
 }
 
 button:disabled {
