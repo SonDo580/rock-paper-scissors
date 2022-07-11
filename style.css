@@ -43,7 +43,8 @@ button {
     margin: 10px;
     font-weight: bold;
     font-size: 20px;
-    color: red
+    color: red;
+    transition: all .1s ease;
 }
 
 /* Add this when the player click a button, then remove */
