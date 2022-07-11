@@ -19,7 +19,10 @@ playerScoresBox.textContent = 0;
 computerScoresBox.textContent = 0;
 
 function playRound(e) {
-    let playerSelection = e.target.textContent;
+    let button = e.target;
+    button.classList.add('choosing');
+
+    let playerSelection = button.textContent;
     let computerSelection = computerPlay();
 
     resultDiv.textContent = showRoundResult(playerSelection, computerSelection);
