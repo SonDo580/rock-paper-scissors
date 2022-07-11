@@ -42,3 +42,8 @@ button {
     font-size: 20px;
     color: red
 }
+
+#result {
+    font-size: 32px;
+    color: yellowgreen;
+}
