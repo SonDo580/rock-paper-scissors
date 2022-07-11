@@ -20,11 +20,13 @@ body {
 
 .player h1, .computer h1 {
     font-size: 40px;
+    color: blue;
 }
 
 .score {
     font-size: 40px;
     font-weight: bold;
+    color: yellow;
 }
 
 button {
@@ -38,4 +40,5 @@ button {
     margin: 10px;
     font-weight: bold;
     font-size: 20px;
+    color: red
 }
