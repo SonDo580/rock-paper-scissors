@@ -5,13 +5,14 @@ body {
 }
 
 .container {
-    display:flex;
+    display: flex;
     justify-content: center;
     gap: 50px;
     padding: 50px 0;
 }
 
-.player, .computer {
+.player,
+.computer {
     border: 3px solid white;
     border-radius: 10px;
     width: 200px;
@@ -19,7 +20,8 @@ body {
     padding: 10px;
 }
 
-.player h1, .computer h1 {
+.player h1,
+.computer h1 {
     font-size: 40px;
     color: blue;
 }
@@ -42,6 +44,13 @@ button {
     font-weight: bold;
     font-size: 20px;
     color: red
+}
+
+/* Add this when the player click a button, then remove */
+.choosing {     
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
 }
 
 button:disabled {
