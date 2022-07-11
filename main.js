@@ -24,7 +24,6 @@ function playRound(e) {
 
     resultDiv.textContent = showRoundResult(playerSelection, computerSelection);
 
-    // Update the score
     switch (decideRoundResult(playerSelection, computerSelection)) {
         case WON:    
             playerScores++;
@@ -41,13 +40,14 @@ function playRound(e) {
     }
 
     if (playerScores === 5 || computerScores === 5) {
-        // Announce the final result
         resultDiv.textContent = showFinalResult(playerScores, computerScores);
+
+        // Disable the buttons
+        buttons.forEach(button => button.removeEventListener('click'));
 
         window.addEventListener('keydown', resetGame, {
             once: true      // so the player won't be reset in the middle of the next game when they press a key
         });
-        
     }
 }
 
@@ -57,6 +57,9 @@ function resetGame() {
     playerScoresBox.textContent = 0;
     computerScoresBox.textContent = 0;
     resultDiv.textContent = '';
+
+    // Activate the buttons again
+    buttons.forEach(button => button.addEventListener('click', playRound));
 }
 
 // This function randomly returns 'Rock', 'Paper', or 'Scissors'
